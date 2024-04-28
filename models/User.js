@@ -20,4 +20,6 @@ const UserSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model('user',UserSchema);  // user yaha pe model ka naam hai 
+const User = mongoose.model('user',UserSchema); 
+User.createIndexes();  //using this we cannot enter duplicate users in database
+module.exports = User; // user yaha pe model ka naam hai 
